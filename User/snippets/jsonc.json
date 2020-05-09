@@ -1,0 +1,128 @@
+{
+	// Place your snippets for jsonc here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	"1": {
+		"prefix": "C: debug active file",
+		"body": [
+			"{",
+			"\t\"name\": \"C: debug active file\",",
+			"\t\"type\": \"cppdbg\",",
+			"\t\"request\": \"launch\",",
+			"\t\"args\": [],",
+			"\t\"stopAtEntry\": false,",
+			"\t\"cwd\": \"\\${workspaceFolder}\",",
+			"\t\"environment\": [],",
+			"\t\"externalConsole\": false,",
+			"\t\"MIMode\": \"gdb\",",
+			"\t\"setupCommands\": [",
+			"\t\t{",
+			"\t\t\t\"description\": \"Enable pretty-printing for gdb\",",
+			"\t\t\t\"text\": \"-enable-pretty-printing\",",
+			"\t\t\t\"ignoreFailures\": true",
+			"\t\t}",
+			"\t],",
+			"\t\"preLaunchTask\": \"C: build active file\",",
+			// The absolute path is needed for program
+			"\t\"program\": \"\\${workspaceFolder}/bin/Debug/\\${fileBasenameNoExtension}\",",
+			"\t\"miDebuggerPath\": \"gdb\",",
+			"\t\"windows\": {",
+			"\t\t\"program\": \"\\${workspaceFolder}/bin/Debug/\\${fileBasenameNoExtension}.exe\",",
+			"\t\t\"miDebuggerPath\": \"gdb.exe\",",
+			"\t}",
+			"}"
+		]
+	},
+	"2": {
+		"prefix": "C: debug workspace",
+		"body": [
+			"{",
+			"\t\"name\": \"C: debug workspace\",",
+			"\t\"type\": \"cppdbg\",",
+			"\t\"request\": \"launch\",",
+			"\t\"args\": [],",
+			"\t\"stopAtEntry\": false,",
+			"\t\"cwd\": \"\\${workspaceFolder}\",",
+			"\t\"environment\": [],",
+			"\t\"externalConsole\": false,",
+			"\t\"MIMode\": \"gdb\",",
+			"\t\"setupCommands\": [",
+			"\t\t{",
+			"\t\t\t\"description\": \"Enable pretty-printing for gdb\",",
+			"\t\t\t\"text\": \"-enable-pretty-printing\",",
+			"\t\t\t\"ignoreFailures\": true",
+			"\t\t}",
+			"\t],",
+			"\t\"preLaunchTask\": \"C: build workspace\",",
+			"\t\"program\": \"\\${workspaceFolder}/bin/Debug/\\${workspaceFolderBasename}\",",
+			"\t\"miDebuggerPath\": \"gdb\",",
+			"\t\"windows\": {",
+			"\t\t\"program\": \"\\${workspaceFolder}/bin/Debug/\\${workspaceFolderBasename}.exe\",",
+			"\t\t\"miDebuggerPath\": \"gdb.exe\",",
+			"\t}",
+			"}"
+		]
+	},
+	"3": {
+		"prefix": "C++: debug active file",
+		"body": [
+			"{",
+			"\t\"name\": \"C++: debug active file\",",
+			"\t\"type\": \"cppdbg\",",
+			"\t\"request\": \"launch\",",
+			"\t\"args\": [],",
+			"\t\"stopAtEntry\": false,",
+			"\t\"cwd\": \"\\${workspaceFolder}\",",
+			"\t\"environment\": [],",
+			"\t\"externalConsole\": false,",
+			"\t\"MIMode\": \"gdb\",",
+			"\t\"setupCommands\": [",
+			"\t\t{",
+			"\t\t\t\"description\": \"Enable pretty-printing for gdb\",",
+			"\t\t\t\"text\": \"-enable-pretty-printing\",",
+			"\t\t\t\"ignoreFailures\": true",
+			"\t\t}",
+			"\t],",
+			"\t\"preLaunchTask\": \"C++: build active file\",",
+			"\t\"program\": \"\\${workspaceFolder}/bin/Debug/\\${fileBasenameNoExtension}\",",
+			"\t\"miDebuggerPath\": \"gdb\",",
+			"\t\"windows\": {",
+			"\t\t\"program\": \"\\${workspaceFolder}/bin/Debug/\\${fileBasenameNoExtension}.exe\",",
+			"\t\t\"miDebuggerPath\": \"gdb.exe\",",
+			"\t}",
+			"}"
+		]
+	},
+	"4": {
+		"prefix": "C++: debug workspace",
+		"body": [
+			"{",
+			"\t\"name\": \"C++: debug workspace\",",
+			"\t\"type\": \"cppdbg\",",
+			"\t\"request\": \"launch\",",
+			"\t\"args\": [],",
+			"\t\"stopAtEntry\": false,",
+			"\t\"cwd\": \"\\${workspaceFolder}\",",
+			"\t\"environment\": [],",
+			"\t\"externalConsole\": false,",
+			"\t\"MIMode\": \"gdb\",",
+			"\t\"setupCommands\": [",
+			"\t\t{",
+			"\t\t\t\"description\": \"Enable pretty-printing for gdb\",",
+			"\t\t\t\"text\": \"-enable-pretty-printing\",",
+			"\t\t\t\"ignoreFailures\": true",
+			"\t\t}",
+			"\t],",
+			"\t\"preLaunchTask\": \"C++: build workspace\",",
+			"\t\"program\": \"\\${workspaceFolder}/bin/Debug/\\${workspaceFolderBasename}\",",
+			"\t\"miDebuggerPath\": \"gdb\",",
+			"\t\"windows\": {",
+			"\t\t\"program\": \"\\${workspaceFolder}/bin/Debug/\\${workspaceFolderBasename}.exe\",",
+			"\t\t\"miDebuggerPath\": \"gdb.exe\",",
+			"\t}",
+			"}"
+		]
+	},
+}
