@@ -1,0 +1,99 @@
+{
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "debug.onTaskErrors": "showErrors",
+    "java.semanticHighlighting.enabled": true,
+    "files.insertFinalNewline": true,
+    "editor.autoClosingQuotes": "never",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingOvertype": "never",
+    "editor.autoSurround": "never",
+    "editor.renderControlCharacters": true,
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "files.associations": {
+        "*.mix": "handlebars",
+        "*.mixal": "handlebars",
+        "*.crd": "songtxt",
+    },
+    "[handlebars]": {
+        "editor.tabSize": 8
+    },
+    "python.languageServer": "Microsoft",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "shellcheck.exclude": [
+        "1091",
+        "2039"
+    ],
+    "launch": {
+        // Documentation: https://go.microsoft.com/fwlink/?linkid=830387
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "C/C++: debug workspace",
+                "type": "cppdbg",
+                "request": "launch",
+                "args": [],
+                "stopAtEntry": false,
+                "cwd": "${workspaceFolder}",
+                "environment": [],
+                "externalConsole": false,
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+                "preLaunchTask": "make",
+                "program": "${workspaceFolder}/bin/Debug/${workspaceFolderBasename}",
+                "miDebuggerPath": "gdb",
+                "windows": {
+                    "program": "${workspaceFolder}/bin/Debug/${workspaceFolderBasename}.exe",
+                    "miDebuggerPath": "gdb.exe",
+                },
+                "presentation": {
+                    "hidden": false,
+                    "group": "",
+                    "order": 1
+                }
+            },
+            {
+                "name": "Python: debug file",
+                "type": "python",
+                "request": "launch",
+                "program": "${file}",
+                "console": "integratedTerminal"
+            },
+            {
+                "type": "java",
+                "name": "Java: debug workspace",
+                "request": "launch",
+                "mainClass": ""
+            },
+        ],
+    },
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 1,
+    "trailing-spaces.trimOnSave": true,
+    "[songtxt]": {
+
+        "editor.renderIndentGuides": false,
+        "editor.occurrencesHighlight": false
+    },
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+}

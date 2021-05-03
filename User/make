@@ -1,0 +1,69 @@
+#!/bin/sh
+# Copyright (C) 2021 Alkis Georgopoulos <https://github.com/alkisg>
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Try to build and debug C/C++ files when a Makefile isn't present
+# Put it in vscode settings like this TODO
+# In Windows, you'll also need this:
+# C:\Program Files\Git\cmd\make.bat
+# @"C:\Program Files\Git\bin\bash" "C:\Program Files\Git\bin\make"
+
+# Only run if a Makefile isn't present
+if [ -r Makefile ]; then
+    exec /usr/bin/make "$@"
+fi
+
+die() {
+    echo "$@" >&2
+    exit 1
+}
+
+main() {
+    local wsfbn run f
+
+    echo "[Activating smart make]" >&2
+    wsfbn=$(basename "$(pwd)")
+    # Constructing a command line like the following:
+    # gcc -ggdb *.c -Iinclude -o bin/Debug/$wsfbn
+    if [ "$1" = "--run" ]; then
+        run=1
+        shift
+    else
+        unset run
+    fi
+    set --
+    for f in *.cpp src/*.cpp; do
+        if [ -f "$f" ]; then
+            if [ $# -eq 0 ]; then
+                set -- g++ -ggdb "$f"
+            else
+                set -- "$@" "$f"
+            fi
+        fi
+    done
+    for f in *.c src/*.c; do
+        if [ -f "$f" ]; then
+            if [ $# -eq 0 ]; then
+                set -- gcc -ggdb "$f"
+            else
+                set -- "$@" "$f"
+            fi
+        fi
+    done
+    if [ $# -eq 0 ]; then
+        die "[No .c or .cpp files found!]
+[In vscode, click Abort, then press Ctrl+Shift+D (Run) and select another target.]"
+    fi
+    if [ -d include ]; then
+        set -- "$@" -Iinclude
+    fi
+    set -- "$@" -o "bin/Debug/$wsfbn"
+    mkdir -p bin/Debug
+    echo "[Compiling: $*]" >&2
+    "$@" || return $?
+    if [ "$run" = "1" ]; then
+        echo "[Running:]" >&2
+        "bin/Debug/$wsfbn" || return $?
+    fi
+}
+
+main "$@"

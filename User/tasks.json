@@ -3,93 +3,38 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "C: build active file",
-            "command": "gcc",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "bin/Debug/${fileBasenameNoExtension}",
-            ],
+            "label": "make",
+            "command": "make",
             "options": {
-                "cwd": "${workspaceFolder}",
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
-                "$gcc",
+                "$gcc"
             ],
             "presentation": {
                 "clear": true,
-                "showReuseMessage": false,
+                "showReuseMessage": false
             },
-            "group": "build",
+            "group": "build"
         },
         {
             "type": "shell",
-            "label": "C: build workspace",
-            "command": "gcc",
-            "args": [
-                "-ggdb",
-                "src/**",
-                "-Iinclude",
-                "-o",
-                "bin/Debug/${workspaceFolderBasename}",
-            ],
+            "label": "make-and-run",
+            "command": "make --run",
             "options": {
-                "cwd": "${workspaceFolder}",
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
-                "$gcc",
+                "$gcc"
             ],
             "presentation": {
                 "clear": true,
-                "showReuseMessage": false,
+                "showReuseMessage": true
             },
-            "group": "build",
-        },
-        {
-            "type": "shell",
-            "label": "C++: build active file",
-            "command": "g++",
-            "args": [
-                "-ggdb",
-                "${file}",
-                "-o",
-                "bin/Debug/${fileBasenameNoExtension}",
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}",
-            },
-            "problemMatcher": [
-                "$gcc",
-            ],
-            "presentation": {
-                "clear": true,
-                "showReuseMessage": false,
-            },
-            "group": "build",
-        },
-        {
-            "type": "shell",
-            "label": "C++: build workspace",
-            "command": "g++",
-            "args": [
-                "-ggdb",
-                "src/**",
-                "-Iinclude",
-                "-o",
-                "bin/Debug/${workspaceFolderBasename}",
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}",
-            },
-            "problemMatcher": [
-                "$gcc",
-            ],
-            "presentation": {
-                "clear": true,
-                "showReuseMessage": false,
-            },
-            "group": "build",
-        },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
     ]
 }
